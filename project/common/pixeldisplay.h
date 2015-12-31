@@ -5,7 +5,7 @@
 #include <QFrame>
 #include <qimage.h>
 #include <qwidget.h>
-
+#include <stdint.h>
 
 
 

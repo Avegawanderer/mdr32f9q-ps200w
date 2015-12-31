@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_proj.xsd">
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_projx.xsd">
 
-  <SchemaVersion>1.1</SchemaVersion>
+  <SchemaVersion>2.1</SchemaVersion>
 
   <Header>### uVision Project, (C) Keil Software</Header>
 
@@ -12,14 +12,16 @@
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
         <TargetCommonOption>
-          <Device>MDR32F9Q2I</Device>
-          <Vendor>milandr</Vendor>
-          <Cpu>IRAM(0x20000000-0x20007FFF) IROM(0x08000000-0x0801FFFF) CLOCK(8000000) CPUTYPE("Cortex-M3")</Cpu>
+          <Device>MDR1986BE92</Device>
+          <Vendor>Milandr</Vendor>
+          <PackID>Keil.MDR1986BExx.1.3.0</PackID>
+          <PackURL>http://www.keil.com/pack/</PackURL>
+          <Cpu>IROM(0x08000000,0x20000) IRAM(0x20000000,0x8000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
-          <StartupFile>"Startup\Milandr\MDR32F9x\startup_MDR32F9x.s" ("MDR32F9x Startup Code")</StartupFile>
-          <FlashDriverDll>UL2CM3(-O463 -S0 -C0 -FO7 -FD20000000 -FC800 -FN1 -FF0MDR32F9x -FS08000000 -FL020000)</FlashDriverDll>
-          <DeviceId>5748</DeviceId>
-          <RegisterFile>MDR32F9x.h</RegisterFile>
+          <StartupFile></StartupFile>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF01986VE9x -FS020000000 -FL0800 -FP0($$Device:MDR1986BE92$IDE\keil\FLASH\1986VE9x.FLM))</FlashDriverDll>
+          <DeviceId>0</DeviceId>
+          <RegisterFile>$$Device:MDR1986BE92$Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -29,14 +31,14 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>SFD\Milandr\MDR32F9x\MDR32F9x.SFR</SFDFile>
+          <SFDFile>$$Device:MDR1986BE92$IDE\keil\SVD\MDR1986BE92.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
           <IncludePath></IncludePath>
           <LibPath></LibPath>
-          <RegisterFilePath>Milandr\MDR32F9x\</RegisterFilePath>
-          <DBRegisterFilePath>Milandr\MDR32F9x\</DBRegisterFilePath>
+          <RegisterFilePath></RegisterFilePath>
+          <DBRegisterFilePath></DBRegisterFilePath>
           <TargetStatus>
             <Error>0</Error>
             <ExitCodeStop>0</ExitCodeStop>
@@ -72,6 +74,8 @@
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
+            <nStopB1X>0</nStopB1X>
+            <nStopB2X>0</nStopB2X>
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
@@ -102,11 +106,11 @@
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
-          <SimDllArguments>-MPU</SimDllArguments>
+          <SimDllArguments> -REMAP</SimDllArguments>
           <SimDlgDll>DCM.DLL</SimDlgDll>
           <SimDlgDllArguments>-pCM3</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
-          <TargetDllArguments>-MPU</TargetDllArguments>
+          <TargetDllArguments></TargetDllArguments>
           <TargetDlgDll>TCM.DLL</TargetDlgDll>
           <TargetDlgDllArguments>-pCM3</TargetDlgDllArguments>
         </DllOption>
@@ -128,6 +132,7 @@
             <RestoreFunctions>1</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
+            <RestoreSysVw>1</RestoreSysVw>
           </Simulator>
           <Target>
             <UseTarget>1</UseTarget>
@@ -139,9 +144,10 @@
             <RestoreFunctions>0</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <RestoreTracepoints>0</RestoreTracepoints>
+            <RestoreSysVw>1</RestoreSysVw>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>7</TargetSelection>
+          <TargetSelection>6</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -169,7 +175,7 @@
           </Flash1>
           <bUseTDR>0</bUseTDR>
           <Flash2>Segger\JL2CM3.dll</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -303,8 +309,8 @@
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
-                <StartAddress>0x20000000</StartAddress>
-                <Size>0x6000</Size>
+                <StartAddress>0x8000000</StartAddress>
+                <Size>0x20000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -328,8 +334,8 @@
               </OCR_RVCT8>
               <OCR_RVCT9>
                 <Type>0</Type>
-                <StartAddress>0x20006000</StartAddress>
-                <Size>0x2000</Size>
+                <StartAddress>0x20000000</StartAddress>
+                <Size>0x8000</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
@@ -353,6 +359,8 @@
             <wLevel>0</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
+            <uC99>0</uC99>
+            <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
@@ -369,6 +377,7 @@
             <SwStkChk>0</SwStkChk>
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
+            <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
@@ -385,6 +394,7 @@
             <useFile>0</useFile>
             <TextAddressRange>0x08000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
+            <pXoBase></pXoBase>
             <ScatterFile></ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
@@ -396,7 +406,7 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Startup</GroupName>
+          <GroupName>CMSIS</GroupName>
           <Files>
             <File>
               <FileName>startup_MDR32F9x.s</FileName>
@@ -408,10 +418,15 @@
               <FileType>1</FileType>
               <FilePath>..\..\library\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c</FilePath>
             </File>
+            <File>
+              <FileName>core_cm3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\CMSIS\CM3\CoreSupport\core_cm3.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>StdPeriph_Driver</GroupName>
+          <GroupName>StdPeriphLibrary</GroupName>
           <Files>
             <File>
               <FileName>MDR32F9Qx_ssp.c</FileName>
@@ -452,6 +467,56 @@
               <FileName>MDR32F9Qx_rst_clk.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\library\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_rst_clk.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>FreeRTOS</GroupName>
+          <Files>
+            <File>
+              <FileName>FreeRTOSConfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\source\FreeRTOSConfig.h</FilePath>
+            </File>
+            <File>
+              <FileName>port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\portable\RVDS\ARM_CM3\port.c</FilePath>
+            </File>
+            <File>
+              <FileName>portmacro.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h</FilePath>
+            </File>
+            <File>
+              <FileName>croutine.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\croutine.c</FilePath>
+            </File>
+            <File>
+              <FileName>list.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\list.c</FilePath>
+            </File>
+            <File>
+              <FileName>queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\queue.c</FilePath>
+            </File>
+            <File>
+              <FileName>tasks.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\tasks.c</FilePath>
+            </File>
+            <File>
+              <FileName>timers.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\timers.c</FilePath>
+            </File>
+            <File>
+              <FileName>heap_4.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\portable\MemMang\heap_4.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -591,57 +656,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>FreeRTOS</GroupName>
-          <Files>
-            <File>
-              <FileName>FreeRTOSConfig.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\source\FreeRTOSConfig.h</FilePath>
-            </File>
-            <File>
-              <FileName>port.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\portable\RVDS\ARM_CM3\port.c</FilePath>
-            </File>
-            <File>
-              <FileName>portmacro.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h</FilePath>
-            </File>
-            <File>
-              <FileName>croutine.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\croutine.c</FilePath>
-            </File>
-            <File>
-              <FileName>list.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\list.c</FilePath>
-            </File>
-            <File>
-              <FileName>queue.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\queue.c</FilePath>
-            </File>
-            <File>
-              <FileName>tasks.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\tasks.c</FilePath>
-            </File>
-            <File>
-              <FileName>timers.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\timers.c</FilePath>
-            </File>
-            <File>
-              <FileName>heap_4.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\portable\MemMang\heap_4.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>GUI</GroupName>
+          <GroupName>gui</GroupName>
           <Files>
             <File>
               <FileName>guiMainForm.c</FileName>
@@ -808,14 +823,16 @@
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
         <TargetCommonOption>
-          <Device>MDR32F9Q2I</Device>
-          <Vendor>milandr</Vendor>
-          <Cpu>IRAM(0x20000000-0x20007FFF) IROM(0x08000000-0x0801FFFF) CLOCK(8000000) CPUTYPE("Cortex-M3")</Cpu>
+          <Device>MDR1986BE92</Device>
+          <Vendor>Milandr</Vendor>
+          <PackID>Keil.MDR1986BExx.1.3.0</PackID>
+          <PackURL>http://www.keil.com/pack/</PackURL>
+          <Cpu>IROM(0x08000000,0x20000) IRAM(0x20000000,0x8000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
-          <StartupFile>"Startup\Milandr\MDR32F9x\startup_MDR32F9x.s" ("MDR32F9x Startup Code")</StartupFile>
-          <FlashDriverDll>UL2CM3(-O463 -S0 -C0 -FO7 -FD20000000 -FC800 -FN1 -FF0MDR32F9x -FS08000000 -FL020000)</FlashDriverDll>
-          <DeviceId>5748</DeviceId>
-          <RegisterFile>MDR32F9x.h</RegisterFile>
+          <StartupFile></StartupFile>
+          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF01986VE9x -FS020000000 -FL0800 -FP0($$Device:MDR1986BE92$IDE\keil\FLASH\1986VE9x.FLM))</FlashDriverDll>
+          <DeviceId>0</DeviceId>
+          <RegisterFile>$$Device:MDR1986BE92$Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -825,14 +842,14 @@
           <SLE66CMisc></SLE66CMisc>
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>SFD\Milandr\MDR32F9x\MDR32F9x.SFR</SFDFile>
+          <SFDFile>$$Device:MDR1986BE92$IDE\keil\SVD\MDR1986BE92.svd</SFDFile>
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
           <IncludePath></IncludePath>
           <LibPath></LibPath>
-          <RegisterFilePath>Milandr\MDR32F9x\</RegisterFilePath>
-          <DBRegisterFilePath>Milandr\MDR32F9x\</DBRegisterFilePath>
+          <RegisterFilePath></RegisterFilePath>
+          <DBRegisterFilePath></DBRegisterFilePath>
           <TargetStatus>
             <Error>0</Error>
             <ExitCodeStop>0</ExitCodeStop>
@@ -868,6 +885,8 @@
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
+            <nStopB1X>0</nStopB1X>
+            <nStopB2X>0</nStopB2X>
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
@@ -898,11 +917,11 @@
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
-          <SimDllArguments>-MPU</SimDllArguments>
+          <SimDllArguments> -REMAP</SimDllArguments>
           <SimDlgDll>DCM.DLL</SimDlgDll>
           <SimDlgDllArguments>-pCM3</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
-          <TargetDllArguments>-MPU</TargetDllArguments>
+          <TargetDllArguments></TargetDllArguments>
           <TargetDlgDll>TCM.DLL</TargetDlgDll>
           <TargetDlgDllArguments>-pCM3</TargetDlgDllArguments>
         </DllOption>
@@ -924,6 +943,7 @@
             <RestoreFunctions>1</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <LimitSpeedToRealTime>0</LimitSpeedToRealTime>
+            <RestoreSysVw>1</RestoreSysVw>
           </Simulator>
           <Target>
             <UseTarget>1</UseTarget>
@@ -935,9 +955,10 @@
             <RestoreFunctions>0</RestoreFunctions>
             <RestoreToolbox>1</RestoreToolbox>
             <RestoreTracepoints>0</RestoreTracepoints>
+            <RestoreSysVw>1</RestoreSysVw>
           </Target>
           <RunDebugAfterBuild>0</RunDebugAfterBuild>
-          <TargetSelection>7</TargetSelection>
+          <TargetSelection>1</TargetSelection>
           <SimDlls>
             <CpuDll></CpuDll>
             <CpuDllArguments></CpuDllArguments>
@@ -951,7 +972,7 @@
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
             <InitializationFile></InitializationFile>
-            <Driver>Segger\JL2CM3.dll</Driver>
+            <Driver>BIN\UL2CM3.DLL</Driver>
           </TargetDlls>
         </DebugOption>
         <Utilities>
@@ -964,8 +985,8 @@
             <DriverSelection>4099</DriverSelection>
           </Flash1>
           <bUseTDR>0</bUseTDR>
-          <Flash2>Segger\JL2CM3.dll</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash2>BIN\UL2CM3.DLL</Flash2>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -1149,11 +1170,13 @@
             <wLevel>0</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
+            <uC99>0</uC99>
+            <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\source;..\..\source\src;..\..\source\gui;..\..\source\gui\guiCore;..\..\source\gui\guiWidgets;..\..\source\gui\guiGraphics;..\..\source\gui\utils;..\..\library\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc;..\..\library\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm;..\..\library\MDR32F9Qx_StdPeriph_Driver\inc;..\..\library\FreeRTOS\Source\portable\RVDS\ARM_CM3;..\..\library\FreeRTOS\Source;..\..\library\FreeRTOS\Source\include</IncludePath>
+              <IncludePath>..\..\source;..\..\source\src;..\..\source\gui;..\..\source\gui\guiCore;..\..\source\gui\guiWidgets;..\..\source\gui\guiGraphics;..\..\source\gui\utils;..\..\library\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc;..\..\library\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm;..\..\library\MDR32F9Qx_StdPeriph_Driver\inc;..\..\library\FreeRTOS\Source\portable\RVDS\ARM_CM3;..\..\library\FreeRTOS\Source;..\..\library\FreeRTOS\Source\include;..\..\library\CMSIS\CM3\CoreSupport</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1165,6 +1188,7 @@
             <SwStkChk>0</SwStkChk>
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
+            <useXO>0</useXO>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
@@ -1181,6 +1205,7 @@
             <useFile>0</useFile>
             <TextAddressRange>0x08000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
+            <pXoBase></pXoBase>
             <ScatterFile></ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
@@ -1192,7 +1217,7 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Startup</GroupName>
+          <GroupName>CMSIS</GroupName>
           <Files>
             <File>
               <FileName>startup_MDR32F9x.s</FileName>
@@ -1204,10 +1229,15 @@
               <FileType>1</FileType>
               <FilePath>..\..\library\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c</FilePath>
             </File>
+            <File>
+              <FileName>core_cm3.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\CMSIS\CM3\CoreSupport\core_cm3.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>StdPeriph_Driver</GroupName>
+          <GroupName>StdPeriphLibrary</GroupName>
           <Files>
             <File>
               <FileName>MDR32F9Qx_ssp.c</FileName>
@@ -1248,6 +1278,56 @@
               <FileName>MDR32F9Qx_rst_clk.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\library\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_rst_clk.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>FreeRTOS</GroupName>
+          <Files>
+            <File>
+              <FileName>FreeRTOSConfig.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\source\FreeRTOSConfig.h</FilePath>
+            </File>
+            <File>
+              <FileName>port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\portable\RVDS\ARM_CM3\port.c</FilePath>
+            </File>
+            <File>
+              <FileName>portmacro.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h</FilePath>
+            </File>
+            <File>
+              <FileName>croutine.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\croutine.c</FilePath>
+            </File>
+            <File>
+              <FileName>list.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\list.c</FilePath>
+            </File>
+            <File>
+              <FileName>queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\queue.c</FilePath>
+            </File>
+            <File>
+              <FileName>tasks.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\tasks.c</FilePath>
+            </File>
+            <File>
+              <FileName>timers.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\timers.c</FilePath>
+            </File>
+            <File>
+              <FileName>heap_4.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\library\FreeRTOS\Source\portable\MemMang\heap_4.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1387,57 +1467,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>FreeRTOS</GroupName>
-          <Files>
-            <File>
-              <FileName>FreeRTOSConfig.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\source\FreeRTOSConfig.h</FilePath>
-            </File>
-            <File>
-              <FileName>port.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\portable\RVDS\ARM_CM3\port.c</FilePath>
-            </File>
-            <File>
-              <FileName>portmacro.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\portable\RVDS\ARM_CM3\portmacro.h</FilePath>
-            </File>
-            <File>
-              <FileName>croutine.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\croutine.c</FilePath>
-            </File>
-            <File>
-              <FileName>list.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\list.c</FilePath>
-            </File>
-            <File>
-              <FileName>queue.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\queue.c</FilePath>
-            </File>
-            <File>
-              <FileName>tasks.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\tasks.c</FilePath>
-            </File>
-            <File>
-              <FileName>timers.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\timers.c</FilePath>
-            </File>
-            <File>
-              <FileName>heap_4.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\library\FreeRTOS\Source\portable\MemMang\heap_4.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>GUI</GroupName>
+          <GroupName>gui</GroupName>
           <Files>
             <File>
               <FileName>guiMainForm.c</FileName>
