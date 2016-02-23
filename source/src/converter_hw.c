@@ -101,7 +101,7 @@ void SetCurrentDAC(uint16_t val, uint8_t current_range)
 	{
 		val /= 10;
 		// Offset current DAC
-		res_val = (int32_t)val + (int32_t)global_settings->dac_current_low_offset / 10;		
+		res_val = (int32_t)val + (int32_t)global_settings->dac_current_high_offset / 10;		
 		if (res_val < 0) res_val = 0;				// cannot offset
 		else if (res_val > 4095) res_val = 4095;	// max limit
 	}
@@ -109,7 +109,7 @@ void SetCurrentDAC(uint16_t val, uint8_t current_range)
 	{
 		val /= 5;
 		// Offset current DAC
-		res_val = (int32_t)val + (int32_t)global_settings->dac_current_high_offset / 5;		
+		res_val = (int32_t)val + (int32_t)global_settings->dac_current_low_offset / 5;		
 		if (res_val < 0) res_val = 0;				// cannot offset
 		else if (res_val > 4095) res_val = 4095;	// max limit
 	}

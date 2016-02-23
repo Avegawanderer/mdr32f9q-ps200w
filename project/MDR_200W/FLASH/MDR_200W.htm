@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\FLASH\MDR_200W.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\FLASH\MDR_200W.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Thu Dec 31 12:48:51 2015
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Tue Feb 23 21:13:13 2016
 <BR><P>
 <H3>Maximum Stack Usage =        408 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1980,7 +1980,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[113]"></a>ProcessButtons</STRONG> (Thumb, 150 bytes, Stack size 24 bytes, buttons.o(.text))
+<P><STRONG><a name="[113]"></a>ProcessButtons</STRONG> (Thumb, 170 bytes, Stack size 24 bytes, buttons.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = ProcessButtons &rArr; UpdateRawButtonState
 </UL>
 <BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
@@ -2490,11 +2490,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_IsReady
 <LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EEPROM_ReadSmallBlock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadRecentProfile
-<LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadGlobalSettings
-<LI><a href="#[1e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_GetProfileName
+<BR>[Called By]<UL><LI><a href="#[1e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_GetProfileName
 <LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_ExamineProfiles
 <LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadDeviceProfile
+<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadRecentProfile
+<LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadGlobalSettings
 </UL>
 
 <P><STRONG><a name="[17f]"></a>EEPROM_WriteBlock</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, i2c_eeprom.o(.text))
@@ -2948,8 +2948,6 @@ Global Symbols
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortExitCritical
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortEnterCritical
-<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadRecentProfile
-<LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadGlobalSettings
 <LI><a href="#[1ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fill_device_profile_by_default
 <LI><a href="#[1e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fill_global_settings_by_default
 <LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_GetProfileState
@@ -2960,6 +2958,8 @@ Global Symbols
 <LI><a href="#[1e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_GetProfileName
 <LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_ExamineProfiles
 <LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadDeviceProfile
+<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadRecentProfile
+<LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadGlobalSettings
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.text)
 </UL>
@@ -5703,13 +5703,13 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;crc16_update
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadRecentProfile
-<LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadGlobalSettings
-<LI><a href="#[1eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_SaveRecentProfile
+<BR>[Called By]<UL><LI><a href="#[1eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_SaveRecentProfile
 <LI><a href="#[1ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_SaveGlobalSettings
 <LI><a href="#[1ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_SaveDeviceProfile
 <LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_ExamineProfiles
 <LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadDeviceProfile
+<LI><a href="#[1e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadRecentProfile
+<LI><a href="#[1e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EE_LoadGlobalSettings
 </UL>
 
 <P><STRONG><a name="[1e4]"></a>fill_global_settings_by_default</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, eeprom.o(.text))

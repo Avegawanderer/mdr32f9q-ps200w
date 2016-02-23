@@ -20,7 +20,7 @@
 #include "key_def.h"
 
 #define BTN_JTAG_MASK	(BTN_ESC | BTN_LEFT | BTN_RIGHT | BTN_OK)
-#define NOT_USE_JTAG_BUTTONS
+//#define NOT_USE_JTAG_BUTTONS
 
 
 //=============================================//

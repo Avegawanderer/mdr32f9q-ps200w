@@ -115,7 +115,7 @@
 
 
 
-
+#define USE_JTAG_BUTTONS        // Allow buttons scan - no JTAG attached
 
 
 

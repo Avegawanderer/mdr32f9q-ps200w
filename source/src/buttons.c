@@ -17,7 +17,8 @@
 buttons_t buttons;
 static uint16_t raw_button_state = 0;
 static bfifo_type_t bit_fifo[TOTAL_BUTTONS];
-
+static uint8_t first_time_visit = 1;
+static uint8_t buttons_jtag_mask;
 
 //---------------------------------------------//
 //	Gets raw button state
@@ -124,9 +125,20 @@ void ProcessButtons(void)
 	taskEXIT_CRITICAL();
 	
 	raw_current = raw_button_state ^ RAW_BUTTON_INVERSE_MASK;
-	#ifdef NOT_USE_JTAG_BUTTONS
-	raw_current &= ~BTN_JTAG_MASK;
-	#endif
+	if (first_time_visit) 
+	{
+		first_time_visit = 0;
+#ifdef USE_JTAG_BUTTONS
+		// Check if JTAG is not used - buttons can get processed
+		// Should power-on with OFF button pressed to allow JTAG operation
+		if (!(raw_current & BTN_OFF))
+			buttons_jtag_mask = 0;
+		else
+#endif
+			buttons_jtag_mask = BTN_JTAG_MASK;
+	}
+	
+	raw_current &= ~buttons_jtag_mask;
 	ResetButtonEvents();
 	
 	// Loop through all buttons
