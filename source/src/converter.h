@@ -12,7 +12,7 @@
 // Global converter constraints
 
 #define CONV_MAX_VOLTAGE_5V_CHANNEL		10000	// [mV]
-#define CONV_MAX_VOLTAGE_12V_CHANNEL	20000	// [mV]
+#define CONV_MAX_VOLTAGE_12V_CHANNEL	24000	// [mV]
 #define CONV_MIN_VOLTAGE_5V_CHANNEL		0		// [mV]
 #define CONV_MIN_VOLTAGE_12V_CHANNEL	0		// [mV]
 

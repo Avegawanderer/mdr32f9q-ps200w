@@ -195,8 +195,14 @@ void vTaskGUI(void *pvParameters)
 							// Profile succesfully loaded
 							guiMessagePanel1_Show(MESSAGE_TYPE_INFO, MESSAGE_PROFILE_LOADED, 0, 30);
 							
-							// Bring GUI to initial state - TODO
-							
+							// Bring GUI to initial state
+                            if (!guiMasterPanel.isVisible)
+                            {
+                                guiCore_AddMessageToQueue((guiGenericWidget_t *)&guiSetupPanel, &guiEvent_HIDE);
+                                guiCore_AddMessageToQueue((guiGenericWidget_t *)&guiMasterPanel, &guiEvent_SHOW);
+                                guiCore_RequestFocusChange((guiGenericWidget_t *)&guiMasterPanel);
+							}
+                            
 							// Update all widgets that display profile data
 							guiUpdateChannel();
 							guiUpdateVoltageLimit(CHANNEL_AUTO, UPDATE_LOW_LIMIT | UPDATE_HIGH_LIMIT);
