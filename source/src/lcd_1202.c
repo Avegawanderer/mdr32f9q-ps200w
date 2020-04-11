@@ -89,7 +89,7 @@ void LcdSingleInit(void)
 	// V0 - voltage range
 	LcdWrite(CMD_SET_VO_RANGE | V0R_8V12,CMD);	// default
 	// Electronic volume
-	LcdWrite(CMD_SET_EV | 0x10,CMD);	// default
+	LcdWrite(CMD_SET_EV | 0x05,CMD);	// Adjusted for new LCD
 	// X-axis reverse
 	#ifdef HORIZONTAL_REVERSE	
 		LcdWrite(CMD_SELECT_SEGMENT_DIR | SEGMENT_REVERSE, CMD);

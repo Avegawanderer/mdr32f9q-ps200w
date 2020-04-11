@@ -24,8 +24,9 @@ int16_t Service_GetTemperature(void)
 void vTaskService(void *pvParameters) 
 {
 	uint32_t i;
-	uint16_t cooler_speed;
+	uint16_t cooler_speed = 0;
 	uint16_t adc_samples;
+    int16_t hyst;
 	
 	// Initialize
 	portTickType lastExecutionTime = xTaskGetTickCount();
@@ -48,7 +49,9 @@ void vTaskService(void *pvParameters)
 		converter_temp_celsius = (int16_t)( (float)adc_samples*0.2*(-0.226) + 230 );	//FIXME
 		
 		// Update cooler speed
-		cooler_speed = (converter_temp_celsius < 25) ? 50 : converter_temp_celsius * 2;
+        hyst = (cooler_speed > 0) ? 3 : 0;
+		//cooler_speed = (converter_temp_celsius < 25) ? 50 : converter_temp_celsius * 2;
+        cooler_speed = (converter_temp_celsius < (35 - hyst)) ? 0 : converter_temp_celsius * 2 - 20;
 		SetCoolerSpeed(cooler_speed);
 		
 		// Send notification to GUI
