@@ -49,9 +49,9 @@ void vTaskService(void *pvParameters)
 		converter_temp_celsius = (int16_t)( (float)adc_samples*0.2*(-0.226) + 230 );	//FIXME
 		
 		// Update cooler speed
-        hyst = (cooler_speed > 0) ? 3 : 0;
+        hyst = (cooler_speed > 0) ? 2 : 0;
 		//cooler_speed = (converter_temp_celsius < 25) ? 50 : converter_temp_celsius * 2;
-        cooler_speed = (converter_temp_celsius < (35 - hyst)) ? 0 : converter_temp_celsius * 2 - 20;
+        cooler_speed = (converter_temp_celsius < (35 - hyst)) ? 0 : converter_temp_celsius * 2 - 16;        // 100% at 58 celcius, 50% at 33 celsius
 		SetCoolerSpeed(cooler_speed);
 		
 		// Send notification to GUI
