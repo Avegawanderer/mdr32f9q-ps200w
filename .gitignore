@@ -1,0 +1,15 @@
+# This file is used to ignore files which are generated
+# ----------------------------------------------------------------------------
+
+*~
+*.autosave
+
+build-*
+*uvguix*
+*.txt
+*.crf
+*.o
+*.d
+FLASH/
+listing/
+*.user
